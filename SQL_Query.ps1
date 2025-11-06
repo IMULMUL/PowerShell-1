@@ -15,7 +15,7 @@ catch{
 }
 
 $SQLCommand = New-Object System.Data.SqlClient.SqlCommand
-$SQLCommand.CommandText = "SHOW @@version"
+$SQLCommand.CommandText = "SELECT is_srvrolemember('sysadmin','user-to-check')" #"SELECT @@version" #
 $SQLCommand.Connection = $SQLConnection
 
 $SQLAdapter = New-Object System.Data.SqlClient.SqlDataAdapter
